@@ -3,13 +3,22 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int ThirdNumber(int number)
 {
-    while (number >= 1000)
+    if (number < 100)
     {
-        number = number / 10;
+        Console.WriteLine("Нет третьего числа.");
+        return number;
     }
+    else
+    {
+        while (number >= 1000)
+        {
+            number = number / 10;
+        }
 
-    int unit = number % 10;
-    return unit;
+        int unit = number % 10;
+        return unit;
+
+    }
 }
 
 Console.WriteLine(ThirdNumber(number));
